@@ -40,3 +40,36 @@ button {
     border-radius: 5px;     /* Bordes redondeados */
     transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
 }
+/* Estilo responsivo para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px; /* Ajustamos el padding */
+    }
+
+    h1 {
+        font-size: 2em; /* Reducir tamaño de fuente en pantallas pequeñas */
+    }
+
+    p {
+        font-size: 1.2em; /* Reducir tamaño de texto en pantallas pequeñas */
+    }
+
+    .barra {
+        padding: 5px; /* Reducir padding de la barra en pantallas pequeñas */
+        height: 50px; /* Ajustar la altura de la barra */
+    }
+
+    .barra button {
+        font-size: 14px; /* Reducir el tamaño de los botones en pantallas pequeñas */
+        padding: 8px 15px; /* Ajustar el padding de los botones */
+    }
+
+
+
+
+
+
+
+
+
+
