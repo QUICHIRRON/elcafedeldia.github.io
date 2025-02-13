@@ -10,6 +10,8 @@ body {
     justify-content: center; /* Centrar contenido verticalmente */
     align-items: center; /* Centrar contenido horizontalmente */
     min-height: 100vh; /* Asegurarse de que el body ocupe toda la altura de la pantalla */
+    padding-top: 15vh; /* Ajustar para que el contenido no se tape con la barra */
+    box-sizing: border-box; /* Incluir el padding dentro del tamaño del body */
 }
 
 h1 {
@@ -68,6 +70,7 @@ button {
 @media screen and (max-width: 768px) {
     body {
         padding: 10px; /* Ajuste del padding en pantallas más pequeñas */
+        padding-top: 20vh; /* Aseguramos un espacio adecuado debajo de la barra */
     }
 
     h1 {
