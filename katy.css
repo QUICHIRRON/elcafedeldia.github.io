@@ -1,54 +1,59 @@
-
+/* Estilos generales para la página */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     background-color: #ffebee;
     color: #d32f2f;
     margin: 0;
     padding: 0;
-    height: 100vh; /* Asegurarse de que el body ocupe todo el alto de la pantalla */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrar el contenido verticalmente */
-    align-items: center; /* Centrar el contenido horizontalmente */
+    justify-content: center; /* Centrar contenido verticalmente */
+    align-items: center; /* Centrar contenido horizontalmente */
+    min-height: 100vh; /* Asegurarse de que el body ocupe toda la altura de la pantalla */
 }
 
 h1 {
-    font-size: 6vw; /* El tamaño de la fuente se ajusta al 6% del ancho de la pantalla */
-    margin-bottom: 10px;
+    font-size: 6vw; /* Ajustar tamaño de fuente al ancho del viewport */
+    margin-bottom: 20px;
 }
 
 p {
-    font-size: 4vw; /* Ajusta el tamaño del texto al 4% del ancho de la pantalla */
+    font-size: 4vw; /* Ajuste dinámico del tamaño del texto */
     margin-bottom: 15px;
+    text-align: center;
 }
 
+/* Botones principales */
 button {
-    padding: 4vw 8vw; /* Ajusta el padding a un porcentaje de la pantalla */
-    font-size: 3.5vw; /* Ajusta el tamaño de la fuente a un porcentaje de la pantalla */
+    padding: 4vw 8vw; /* Ajusta el padding de los botones */
+    font-size: 3.5vw; /* Ajuste dinámico del tamaño de la fuente */
     background-color: #d32f2f;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin: 2vw; /* Ajusta el espacio entre los botones */
+    margin: 2vw; /* Espacio entre los botones */
+    transition: background-color 0.3s ease;
 }
 
+/* Barra de navegación */
 .barra {
     width: 100%;
     background-color: #FF7F7F;
     color: white;
-    padding: 2vw; /* El padding también se ajusta al tamaño de la pantalla */
-    font-size: 4vw; /* Ajusta el tamaño de la fuente en la barra de navegación */
+    padding: 2vw;
+    font-size: 4vw;
     position: fixed;
     top: 0;
     left: 0;
-    height: 10vh; /* Altura de la barra en función de la altura de la pantalla */
+    height: 10vh; /* Ajusta la altura de la barra en función de la altura del viewport */
     display: flex;
-    justify-content: space-around; /* Alinear los botones uniformemente */
-    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: space-around; /* Espaciado uniforme entre los botones */
+    align-items: center; /* Centra los botones verticalmente */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total de la barra */
 }
 
+/* Botones dentro de la barra */
 .barra button {
     background-color: #00000044;
     color: #ffffff;
@@ -59,36 +64,58 @@ button {
     transition: background-color 0.3s ease;
 }
 
-/* Estilo responsivo adicional */
+/* Diseño responsivo para pantallas más pequeñas */
 @media screen and (max-width: 768px) {
     body {
-        padding: 0;
-        height: 100%;
-    }
-
-    .barra {
-        height: 12vh; /* Ajustamos un poco la altura de la barra en pantallas más pequeñas */
+        padding: 10px; /* Ajuste del padding en pantallas más pequeñas */
     }
 
     h1 {
-        font-size: 8vw; /* Aumentar un poco el tamaño en pantallas pequeñas */
+        font-size: 8vw; /* Aumentar el tamaño del título en pantallas pequeñas */
     }
 
     p {
-        font-size: 5vw;
+        font-size: 5vw; /* Aumentar el tamaño del texto en pantallas pequeñas */
     }
 
     button {
-        font-size: 4.5vw; /* Hacer los botones más grandes en pantallas pequeñas */
+        font-size: 5vw; /* Hacer los botones más grandes en pantallas pequeñas */
+        padding: 6vw 10vw; /* Aumentar el padding para que los botones sean más fáciles de tocar */
+    }
+
+    .barra {
+        padding: 5vw; /* Ajustar el padding de la barra */
+        height: 12vh; /* Ajustar la altura de la barra para pantallas más pequeñas */
+    }
+
+    .barra button {
+        font-size: 4vw; /* Ajustar el tamaño de los botones de la barra */
+        padding: 5vw 10vw; /* Aumentar el tamaño de los botones dentro de la barra */
     }
 }
 
+/* Estilos para dispositivos muy pequeños, como móviles en modo vertical */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 10vw; /* Reducir aún más el tamaño del título */
+    }
 
+    p {
+        font-size: 6vw; /* Reducir el tamaño del texto */
+    }
 
+    button {
+        font-size: 6vw; /* Aumentar el tamaño de los botones */
+        padding: 8vw 12vw; /* Hacer los botones grandes y fáciles de tocar */
+    }
 
+    .barra {
+        padding: 6vw; /* Asegurar que la barra tenga suficiente espacio */
+        height: 15vh; /* Asegurar que la barra no ocupe demasiado espacio en pantallas pequeñas */
+    }
 
-
-
-
-
-
+    .barra button {
+        font-size: 5vw; /* Ajuste aún mayor para los botones */
+        padding: 6vw 10vw; /* Asegurar que los botones dentro de la barra sean tocables */
+    }
+}
