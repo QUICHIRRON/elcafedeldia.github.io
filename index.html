@@ -5,6 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KATY</title>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfica de Función</title>
+    
+    <!-- MathJax para renderizar la fórmula -->
+    <script type="text/javascript" async 
+        src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Chart.js para graficar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .math-button {
+            display: inline-block;
+            padding: 15px 20px;
+            font-size: 20px;
+            border: 2px solid #000;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            margin: 20px;
+        }
+        canvas {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="barra">
@@ -22,3 +53,54 @@
     <p>¡Feliz San Valentín!</p>
     <p>Este regalo no es material, pero si tiene un pedacito de mí</p>
     <p>Espero que te guste mucho el detallito, LA SORPRESITA ES PARA EL FINAL</p>
+
+    <button class="math-button" onclick="dibujarGrafico()">
+        \( \sin(\pi^3 x) \cdot \sqrt{\frac{e^2 - x^2}{2}} + \sqrt{|x|} \)
+    </button>
+
+    <canvas id="grafica" width="400" height="300"></canvas>
+
+    <script>
+        function f(x) {
+            let e = Math.E;
+            if ((e**2 - x**2) < 0) return NaN; // Evitar valores complejos
+            return Math.sin(Math.PI**3 * x) * Math.sqrt((e**2 - x**2) / 2) + Math.sqrt(Math.abs(x));
+        }
+
+        function dibujarGrafico() {
+            let ctx = document.getElementById('grafica').getContext('2d');
+            
+            let xValues = [];
+            let yValues = [];
+
+            for (let i = -1; i <= 1; i += 0.05) {
+                xValues.push(i);
+                yValues.push(f(i));
+            }
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        label: 'f(x)',
+                        data: yValues,
+                        borderColor: 'blue',
+                        borderWidth: 2,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: { title: { display: true, text: 'x' } },
+                        y: { title: { display: true, text: 'f(x)' } }
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
