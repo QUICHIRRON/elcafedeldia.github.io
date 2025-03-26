@@ -1,0 +1,142 @@
+* {
+    user-select: none;
+    outline: none;
+} 
+
+header {
+    list-style-type: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: rgb(61, 120, 209);
+    box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.barra {
+    background-color: #f1f1f1;
+    justify-content: center;
+    width: 100%;
+}
+
+.barra ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.barra ul li {
+    margin: 0 15px;
+}
+
+.barra li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    justify-content: center;
+    padding: 10px 15px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.barra li {
+    float: left;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+}
+
+.barra li a:hover {
+    background-color: rgb(61, 120, 209);
+    color: white;
+}
+
+.barra li ul {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    text-align: left;
+    z-index: 10;
+}
+
+.barra li:hover > ul {
+    display: block;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+
+.adreca{
+    font-size: 20px;
+    text-align: left;
+}
+.direccion {
+    text-align: center;
+
+}
+
+.direccion a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+
+
+.contact-social-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin-top: 20px;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    text-align: left;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
